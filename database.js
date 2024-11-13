@@ -5,7 +5,7 @@ import config from './config/config.js';
 const env = process.env.NODE_ENV || 'development';
 console.log('Current Environment:', env);
 const { database, username, password, host, dialect } = config[env];
-
+console.log('Config Values:', { database, username, password, host, dialect });
 const sequelize = new Sequelize(database, username, password, {
   host, dialect,
   timezone: '+05:30',
