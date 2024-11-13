@@ -3,6 +3,7 @@ import { Sequelize } from 'sequelize';
 import config from './config/config.js';
 
 const env = process.env.NODE_ENV || 'development';
+console.log('Current Environment:', env);
 const { database, username, password, host, dialect } = config[env];
 
 const sequelize = new Sequelize(database, username, password, {
