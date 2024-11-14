@@ -1,5 +1,3 @@
-import fs from 'fs';
-import https from 'https';
 import express from "express";
 import logger from "./middleware/logger.js";
 import path from "path";

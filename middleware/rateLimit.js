@@ -1,7 +1,7 @@
 import { rateLimit } from 'express-rate-limit'
 
 const registrationLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
+    windowMs: 10 * 60 * 1000, // 5 minutes
     max: 10, // Limit each IP to 10 registration requests per `windowMs`
     handler: (req, res) => {
         res.status(429).json({
@@ -13,8 +13,8 @@ const registrationLimiter = rateLimit({
   });
 
   export const newsletterLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 3, // Limit each IP to 10 registration requests per `windowMs`
+    windowMs: 10 * 60 * 1000, // 5 minutes
+    max: 15, // Limit each IP to 15 registration requests per `windowMs`
     handler: (req, res) => {
         res.status(429).json({
           message: "Too many registration attempts from this IP. Please try again later."
